@@ -1,0 +1,24 @@
+.admin-index {
+    padding: 5rem 0;
+}
+
+.data-table {
+    width: 40vw;
+}
+
+.portal-title {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 400;
+	font-size: 1.5rem;
+}
+/*
+
+#ui-datepicker-div {
+    background-color: white;
+    border: 1px solid #0b214f;
+    border-radius: 3%;
+}
+
+.ui-corner-all {
+    margin: 0 1rem;
+}*/

@@ -1,0 +1,17 @@
+INDEX: 
+hotel: Ja Lake View Hotel Dubai 
+https://www.discoveryloyalty.com/JA-Resorts-Hotels/JA-Lake-View-Hotel
+
+rooms:
+- Single: https://www.hotel-drie-eiken.com/en/rooms/comfort-single-room
+https://www.booking.com/hotel/be/zorghotel-drie-eiken.en-gb.html
+- Double: https://www.booking.com/hotel/ae/ja-lake-view.en-gb.html
+- Family: https://www.thebuchananhotel.com/japantown-san-francisco-boutique-hotel-photos/#accommodations
+- Penthouse: https://www.booking.com/hotel/ae/ja-lake-view.en-gb.html
+
+restaurant & activities:
+https://www.discoveryloyalty.com/JA-Resorts-Hotels/JA-Lake-View-Hotel
+https://www.jaresortsholidays.com/dubai/ja-lake-view-hotel/
+
+ROOMS: 
+- Room stock photos: paradishotel.com

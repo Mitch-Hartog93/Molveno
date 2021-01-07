@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Molveno Lake Resort</title>
+
+    <!-- Fonts    -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,400,800,900|Ubuntu:400,500,700&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheets    -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- FontAwesome icons -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha384-wxqG4glGB3nlqX0bi23nmgwCSjWIW13BdLUEYC4VIMehfbcro/ATkyDsF/AbIOVe" crossorigin="anonymous">
+
+	<!-- Bootstrap Scripts -->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body>
+
+<!--NAVBAR -->
+<div class="container-fluid gradient-bg sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light col-lg-10 m-auto">
+        <a class="navbar-brand h1" href="index.html"><img class="pr-3" src="img/Company%20Logo_small.png" height="70px">Molveno Lake Resort</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="public/rooms/room-overview.html">Rooms</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Restaurant</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="users/login.html"><span class="navbar-login">Login</span></a>
+                </li>
+                <li class="nav-item nav-flags flex-lg-column">
+                    <div class="flag-div"><a class="nav-flag" href="#"><img class="flag" src="img/flaguk.png" alt="English"></a></div>
+                    <div class="flag-div"><a class="nav-flag" href="#"><img class="flag" src="img/flagzh.png" alt="Chinese"></a></div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+    <!--HOTEL STOCK PHOTO -->
+	<div class="index-picture">
+
+        <div id="imageCarouseltop" class="carousel slide carousel-fade" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#imageCarouseltop" data-slide-to="0" class="active"></li>
+                <li data-target="#imageCarouseltop" data-slide-to="1"></li>
+                <li data-target="#imageCarouseltop" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <div class="view">
+                        <img class="d-block w-100 mx-auto" src="img/indexhotel1.jpg" alt="First index slide">
+                        <div class="mask rgba-black-slight"></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="view">
+                        <img class="d-block w-100 mx-auto" src="img/indexhotel2.jpg" alt="Second index slide">
+                        <div class="mask rgba-black-slight"></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="view">
+                        <img class="d-block w-100 mx-auto" src="img/indexhotel3.jpg" alt="Third index slide">
+                        <div class="mask rgba-black-slight"></div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#imageCarouseltop" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#imageCarouseltop" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+<!--        <img class="stockhotel img-fluid" src="img/indexhotel1.jpg">-->
+    </div>
+
+    <!-- QUICK ROOM BOOKER -->
+<!--
+	<div class="container input-container">
+        <div class="container">
+
+            &lt;!&ndash; Calendar input left &ndash;&gt;
+            <div class='col-md-3'>
+                <div class="form-group">
+                    <div class='input-group date' id='datetimepicker6'>
+                        <input type='text' class="form-control"/>
+                            <span class="input-group-addon far fa-2x fa-calendar-alt">
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            &lt;!&ndash; Calendar input right  &ndash;&gt;
+            <div class='col-md-3'>
+                <div class="form-group">
+                    <div class='input-group date' id='datetimepicker7'>
+                        <input type='text' class="form-control"/>
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+
+<!-- HOME SECTIONS -->
+
+<div class="home-content mx-auto">
+    <div class="section-row row mx-auto">
+        <div class="textcolumn my-auto col-md-8">
+            <h4>Luxurious Rooms</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam faucibus pulvinar lacus eget finibus. Mauris nec lacus ac nisi fringilla viverra. Nulla eget nibh et magna placerat posuere. Donec feugiat nibh sit amet velit suscipit, id sagittis lorem consectetur. Duis lobortis augue vel eros tincidunt, vel dignissim tortor tempus. Sed sit amet porttitor dolor, venenatis malesuada tortor.</p>
+        </div>
+        <div class="imgcolumn ml-auto col-md-4">
+            <div id="imageCarouselrooms" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators wide-indicators">
+                    <li data-target="#imageCarouselrooms" data-slide-to="0" class="active"></li>
+                    <li data-target="#imageCarouselrooms" data-slide-to="2"></li>
+                    <li data-target="#imageCarouselrooms" data-slide-to="1"></li>
+                    <li data-target="#imageCarouselrooms" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <div class="view">
+                            <img class="d-block w-100 section-img mx-auto" src="img/indexroom1.png" alt="Single room slide">
+                            <div class="mask rgba-black-slight"></div>
+                        </div>
+                        <div class="carousel-caption p-0">
+                            <p><small>Single Room</small></p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="view">
+                            <img class="d-block w-100 section-img mx-auto" src="img/indexroom2.png" alt="Double room slide">
+                            <div class="mask rgba-black-slight"></div>
+                        </div>
+                        <div class="carousel-caption p-0">
+                            <p><small>Double Room</small></p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="view">
+                            <img class="d-block w-100 section-img mx-auto" src="img/indexroom3.png" alt="Family room slide">
+                            <div class="mask rgba-black-slight"></div>
+                        </div>
+                        <div class="carousel-caption p-0">
+                            <p><small>Family Room</small></p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="view">
+                            <img class="d-block w-100 section-img mx-auto" src="img/indexroom4.png" alt="Penthouse room slide">
+                            <div class="mask rgba-black-slight"></div>
+                        </div>
+                        <div class="carousel-caption p-0">
+                            <p><small>Penthouse</small></p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev justify-content-start" href="#imageCarouselrooms" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next justify-content-end" href="#imageCarouselrooms" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+
+    <div class="section-row row mx-auto flex-md-row-reverse">
+        <div class="textcolumn my-auto col-md-7">
+            <h4>Star Restaurant</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et felis mi. Praesent dui tortor, placerat vel arcu at, volutpat condimentum urna. Nullam quis purus velit. Integer ornare eget diam bibendum tempus. Etiam viverra posuere nisi vitae tempor. Donec ultricies lorem libero, vel euismod erat blandit et. Fusce viverra, lorem ac sodales faucibus, nibh lacus suscipit elit, ac porta velit ante nec odio.</p>
+        </div>
+        <div class="col-md-1 divider"></div>
+        <div class="imgcolumn ml-auto col-md-4">
+            <div id="imageCarouselrestaurant" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators wide-indicators">
+                    <li data-target="#imageCarouselrestaurant" data-slide-to="0" class="active"></li>
+                    <li data-target="#imageCarouselrestaurant" data-slide-to="1"></li>
+                    <li data-target="#imageCarouselrestaurant" data-slide-to="2"></li>
+                    <li data-target="#imageCarouselrestaurant" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <div class="view">
+                            <img class="d-block w-100 section-img mx-auto" src="img/indexrestaurant1.png" alt="First restaurant slide">
+                            <div class="mask rgba-black-slight"></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="view">
+                            <img class="d-block w-100 section-img mx-auto" src="img/indexrestaurant2.png" alt="Second restaurant slide">
+                            <div class="mask rgba-black-slight"></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="view">
+                            <img class="d-block w-100 section-img mx-auto" src="img/indexrestaurant3.png" alt="Third restaurant slide">
+                            <div class="mask rgba-black-slight"></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="view">
+                            <img class="d-block w-100 section-img mx-auto" src="img/indexrestaurant4.png" alt="Fourth restaurant slide">
+                            <div class="mask rgba-black-slight"></div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev justify-content-start" href="#imageCarouselrestaurant" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next justify-content-end" href="#imageCarouselrestaurant" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <hr>
+
+    <div class="section-row row mx-auto">
+        <div class="textcolumn my-auto col-md-8">
+            <h4>Numerous Activities</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur ex eu euismod suscipit, mi lectus ut lorem. Etiam ac metus varius, aliquet ligula eget, feugiat nulla. Fusce dictum volutpat magna et hendrerit. Ut ornare varius tempus. Quisque tincidunt nunc laoreet eros varius vestibulum. Sed suscipit, nibh in molestie suscipit, urna felis euismod nisi, ac sagittis leo justo sit amet tortor. Mauris imperdiet risus ac interdum interdum.</p>
+        </div>
+        <div class="imgcolumn my-auto col-md-4">
+            <div id="imageCarouselactivities" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators wide-indicators">
+                    <li data-target="#imageCarouselactivities" data-slide-to="0" class="active"></li>
+                    <li data-target="#imageCarouselactivities" data-slide-to="1"></li>
+                    <li data-target="#imageCarouselactivities" data-slide-to="2"></li>
+                    <li data-target="#imageCarouselactivities" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <div class="view">
+                            <img class="d-block w-100 section-img mx-auto" src="img/indexactivities1.png" alt="Wellness Spa slide">
+                            <div class="mask rgba-black-slight"></div>
+                        </div>
+                        <div class="carousel-caption p-0">
+                            <p><small>Wellness Spa</small></p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="view">
+                            <img class="d-block w-100 section-img mx-auto" src="img/indexactivities2.png" alt="Golf court slide">
+                            <div class="mask rgba-black-slight"></div>
+                        </div>
+                        <div class="carousel-caption p-0">
+                            <p><small>Golf Court</small></p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="view">
+                            <img class="d-block w-100 section-img mx-auto" src="img/indexactivities3.png" alt="Rooftop Bar slide">
+                            <div class="mask rgba-black-slight"></div>
+                        </div>
+                        <div class="carousel-caption p-0">
+                            <p><small>Rooftop Bar</small></p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="view">
+                            <img class="d-block w-100 section-img mx-auto" src="img/indexactivities4.png" alt="Lake activities slide">
+                            <div class="mask rgba-black-slight"></div>
+                        </div>
+                        <div class="carousel-caption p-0">
+                            <p><small>Lake activities</small></p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev justify-content-start" href="#imageCarouselactivities" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next justify-content-end" href="#imageCarouselactivities" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- FOOTER -->
+<div class="container-fluid footer gradient-bg-rev">
+    <div class="row ">
+        <div class="d-flex col-md-6 justify-content-center footer-phone ">
+            <i class="fas fa-phone-alt"></i>&nbsp; +86 10 1234 5678
+        </div>
+        <div class="d-flex col-md-6 justify-content-center">
+            <ul class="d-flex p-0">
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="d-flex col-12 justify-content-center "><small>© Copyright Molveno Lake Resort 2020</small></div>
+    </div>
+</div>
+
+
+
+
+<script src="js/index.js" charset="utf-8"></script>
+
+</body>
+</html>

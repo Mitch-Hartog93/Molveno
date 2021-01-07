@@ -1,0 +1,234 @@
+{{>admin/header-admin}}
+
+<div class="container portal-title my-3">
+    Booking list
+</div>
+<!-- Data table die wordt ingelezen vanuit Datatable Library -->
+<div class="data-table mx-auto my-5">
+    <table id="bookingTable" class="display mx-auto">
+    </table>
+
+    <!--Buttons underneath table for viewing, editing, deleting or adding guests -->
+    <!--Opens modal and gets guest details from selected row
+    Open modal through jQuery -->
+    <button id="viewBookingButton" type="button" class="btn btn-primary">View</button>
+    <button id="editBookingButton" type="button" class="btn btn-warning">Edit</button>
+    <button id="deleteBookingButton" type="button" class="btn btn-danger">Delete</button>
+    <button id="newBookingButton" type="button" class="btn btn-success">New</button>
+
+<!--    <div>-->
+<!--        <button id="fetchList" class="btn btn-primary mt-4">Fetch data</button>-->
+<!--        <button id="clearList" class="btn btn-warning mt-4">Clear data</button>-->
+<!--    </div>-->
+
+</div>
+
+<!-- Booking: VIEW Details Modal -->
+<div class="modal fade" id="viewBookingModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="viewModalLabel">Booking Details</h5>
+                <button type="button" class="close close-button booking-close-button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- All guest information fields, filled in with JQuery from selected guest ID -->
+                        <div class="col-6 text-right">
+                            <b>Booking Number:</b>
+                        </div>
+                        <div id="viewBookingId" class="col-6 text-left">
+                            <i>Currently no booking selected.</i>
+                        </div>
+                        <div class="col-6 text-right">
+                            <b>Guest ID:</b>
+                        </div>
+                        <div id="viewBookingGuestId" class="col-6 text-left"></div>
+                        <div class="col-6 text-right">
+                            <b>Guest Name:</b>
+                        </div>
+                        <div id="viewBookingGuest" class="col-6 text-left"></div>
+                        <div class="col-6 text-right">
+                            <b>Status:</b>
+                        </div>
+                        <div id="viewBookingStatus" class="col-6 text-left"></div>
+                        <div class="col-6 text-right">
+                            <b>Check-in:</b>
+                        </div>
+                        <div id="viewBookingCheckIn" class="col-6 text-left"></div>
+                        <div class="col-6 text-right">
+                            <b>Check-out:</b>
+                        </div>
+                        <div id="viewBookingCheckOut" class="col-6 text-left"></div>
+                        <div class="col-6 text-right">
+                            <b>Total guests:</b>
+                        </div>
+                        <div id="viewBookingTotalGuests" class="col-6 text-left"></div>
+                        <div class="col-6 text-right">
+                            <b>Booked Rooms:</b>
+                        </div>
+                        <div id="viewBookingRooms" class="col-6 text-left"></div>
+                        <div class="col-6 text-right">
+                            <b>Total Cost (¥):</b>
+                        </div>
+                        <div id="viewBookingInvoice" class="col-6 text-left"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Guest: EDIT Details Modal -->
+<div class="modal fade" id="editBookingModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Edit Booking</h5>
+                <button type="button" class="close close-button booking-close-button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="container-fluid w-75">
+                    <!-- All guest information input fields, filled in with JQuery from selected guest ID -->
+                    <div class="form-group row">
+                        <div class="col-4 text-right">
+                            <label for="editBookingId">Booking Number:</label>
+                        </div>
+                        <div class="col-8 text-left">
+                            <input type="number" id="editBookingId" class="form-control" name="editId" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-4 text-right">
+                            <label for="editBookingStatus">Status:</label>
+                        </div>
+                        <div class="col-8 text-left">
+                            <input type="radio" id="editBookingStatusBooked" name="editBookingStatus" value="booked" required>
+                            <label for="editBookingStatusBooked">Booked</label>
+                            <input type="radio" id="editBookingStatusReserved" name="editBookingStatus" value="reserved" required>
+                            <label for="editBookingStatusReserved">Reserved</label>
+                            <input type="radio" id="editBookingStatusCanceled" name="editBookingStatus" value="cancelled" required>
+                            <label for="editBookingStatusCanceled">Cancelled</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-4 text-right">
+                            <label for="editBookingGuestId">Guest ID:</label>
+                        </div>
+                        <div class="col-8 text-left">
+                            <input type="number" id="editBookingGuestId" class="form-control" name="editBookingGuestId">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-4 text-right">
+                            <label for="editBookingGuest">Guest:</label>
+                        </div>
+                        <div class="col-8 text-left">
+                            <input type="text" id="editBookingGuest" class="form-control" name="editBookingGuest">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-4 text-right">
+                            <label for="editBookingTotalGuests">No. of guests:</label>
+                        </div>
+                        <div class="col-8 text-left">
+                            <input type="text" id="editBookingTotalGuests" class="form-control" name="editBookingTotalGuests">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-4 text-right">
+                            <label for="editBookingRooms">Rooms:</label>
+                        </div>
+                        <div class="col-8 text-left">
+                            <input type="text" id="editBookingRooms" class="form-control" name="editBookingRooms">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-4 text-right">
+                            <label for="editBookingCheckIn">Check-in:</label>
+                        </div>
+                        <div class="col-8 text-left">
+                            <input type="text" id="editBookingCheckIn" class="datepicker" name="editBookingCheckIn" placeholder="dd-MM-yyyy">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-4 text-right">
+                            <label for="editBookingCheckOut">Check-out:</label>
+                        </div>
+                        <div class="col-8 text-left">
+                            <input type="text" id="editBookingCheckOut" class="datepicker" name="editBookingCheckOut" placeholder="dd-MM-yyyy">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <!--Save edit of booking-->
+                <button type="button" id="saveBookingButton" class="btn btn-success" data-dismiss="modal">Save</button>
+                <button type="button" class="btn btn-secondary close-button booking-close-button" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- No booking selected Modal -->
+<div class="modal fade" id="noBookingSelectedModal" tabindex="-1" role="dialog" aria-labelledby="noBookingSelectedModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="noBookingSelectedModalLabel">Booking selection</h5>
+                <button type="button" class="close close-button booking-close-button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                No booking selected.
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-secondary close-button booking-close-button" data-dismiss="modal">Cancel</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- booking: DELETE Confirmation Modal -->
+<div class="modal fade" id="deleteBookingModal" tabindex="-1" role="dialog" aria-labelledby="deleteBookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteBookingModalLabel">Booking Deletion</h5>
+                <button type="button" class="close booking-close-button booking-close-button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you wish to delete this booking?
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" id="deleteBookingConfirmationButton" class="btn btn-danger" data-dismiss="modal">Delete</button>
+                <button type="button" class="btn btn-secondary booking-close-button booking-close-button" data-dismiss="modal">Cancel</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{>admin/footer-admin}}

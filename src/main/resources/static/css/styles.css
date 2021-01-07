@@ -1,0 +1,175 @@
+/*Font style and general layout*/
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	background-color: #c1e1f1;
+    text-align: center;
+    padding: 0;
+    color: #0b214f;
+}
+
+li {
+	list-style: none;
+}
+
+.gradient-bg {
+	background-image: linear-gradient(180deg, rgba(171,220,242,1) 0%, rgba(119,191,224,1) 60%, rgba(104,182,218,1) 100%);
+}
+.gradient-bg-rev {
+	background-image: linear-gradient(0deg, rgba(171,220,242,1) 0%, rgba(119,191,224,1) 60%, rgba(104,182,218,1) 100%);
+}
+
+div.ui-datepicker{
+	font-size:13px;
+}
+
+.Highlighted a {
+	border: 1px solid #309bcf !important;
+	background: #97c0ff !important;
+}
+
+/* NAVBAR */
+.navbar .navbar-brand,
+.navbar-nav .nav-item .nav-link,
+.navbar-nav .nav-item .nav-flag,
+.navbar a {
+	color: #005693;
+}
+
+.navbar .navbar-brand {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 500;
+	font-size: 1.5rem;
+}
+
+/* CONTAINERS */
+
+.home-content {
+	margin: 5% auto;
+}
+
+.section-row {
+	width: 70vw;
+}
+
+/*.textcolumn {
+	width: 60%;
+	padding: 0 1rem;
+}*/
+
+/* INDEX SECTIONS */
+
+/*.imgcolumn {
+	width: 30%;
+}*/
+
+.section-img {
+max-width: 350px;
+height: auto;
+}
+
+
+
+/* FOOTER */
+
+.footer {
+	width: 100%;
+	padding: 2rem;
+	color: #005693;
+}
+
+.footer li a {
+	margin: 0 1.5rem;
+	color: #005693;
+}
+
+
+/* IMAGES AND LOGOS */
+
+
+hr {
+	border: none;
+	border-top: 10px dotted #68b6da;
+	margin: 40px auto;
+	max-width: 175px;
+	width: 15%;
+}
+
+.far, .fas logo colour { /*Fontawesome logos */
+	color: #005693;
+}
+
+.flag {
+	height: 17px;
+}
+
+.stockhotel {
+	opacity: 0.9;
+	width: 100%;
+}
+
+.wide-indicators li {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+
+
+
+/* MEDIA BREAKPOINTS */
+
+@media screen and (max-width: 1200px) {
+    .section-row {
+        width: 95vw;
+     }
+
+     .divider {
+     display: none;
+     }
+
+    .section-img {
+    max-width: 260px;
+    height: auto;
+    }
+}
+
+@media screen and (max-width: 992px) {
+	.flag-div {
+		display: inline-block;
+		width: 29px;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.nav-flag {
+		margin-left: 3rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.textcolumn {
+		width: 100%;
+		padding: 0 3rem;
+	}
+
+
+	.imgcolumn {
+		width: 100%;
+	}
+
+	.section-img {
+        max-width: 200px;
+        height: auto;
+        }
+
+
+	.footer {
+    	width: 100%;
+    	padding: 1.5rem;
+    }
+
+	.footer ul {
+    	margin-top: 1rem;
+    }
+
+}

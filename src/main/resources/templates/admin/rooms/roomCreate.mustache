@@ -1,0 +1,43 @@
+
+    <div class="container">
+    <button onClick="roomList();">Rooms</button>
+    <form class="was-validated">
+        <div class="row">
+            <div class="col-sm">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Room name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter room name" pattern="^[a-zA-Z0-9]*$" required>
+            <div class="invalid-feedback">
+                Please choose a room name.
+              </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Number of single beds</label>
+            <input type="number" class="form-control" id="single" placeholder="Enter number of single bed" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Number of double beds</label>
+            <input type="number" class="form-control" id="double" placeholder="Enter number of double beds" required>
+        </div>
+    </div>
+    <div class="col-sm">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Number of baby beds</label>
+            <input type="number" class="form-control" id="baby" placeholder="Enter number of baby beds"required>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="available" required>
+            <label class="form-check-label" for="exampleCheck1">Available</label>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="disabled" required>
+            <label class="form-check-label" for="exampleCheck2">Disabled</label>
+        </div>
+        
+    </div>
+
+    </div>
+   
+    <button  onClick="postRoom();" type="button" class="btn btn-primary">Submit</button>
+    </form>
+</div>

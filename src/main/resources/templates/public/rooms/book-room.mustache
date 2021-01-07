@@ -1,0 +1,265 @@
+{{>header}}
+
+
+<div class="row book-room-row mx-auto">
+    <div class="col-md-7 booking-guest-form">
+
+           <div class="container-fluid w-75">
+                <!-- All guest information input fields, filled in with JQuery from selected guest ID or create new-->
+                <div class="form-group row d-none">
+                    <div class="col-4 text-right">
+                        <label for="bookingGuestId">Guest ID: </label>
+                    </div>
+                    <div class="col-8 text-left">
+                        <input type="number" id="bookingGuestId" class="form-control" name="bookingGuestId">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-4 text-right">
+                        <label for="bookingGuestName">Guest Name: </label>
+                    </div>
+                    <div class="col-8 text-left">
+                        <input type="text" id="bookingGuestName" class="form-control" name="bookingGuestName" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-4 text-right">
+                        <label for="bookingGuestBirthDate">Date of Birth: </label>
+                    </div>
+                    <div class="col-8 text-left">
+                        <input type="text" id="bookingGuestBirthDate" class="datepicker" name="bookingGuestBirthDate" placeholder="dd-MM-yyyy" required>
+                    </div>
+                    <div class="invalid-feedback" id="invalidGuestAge">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-4 text-right">
+                        <label for="bookingGuestMail">E-mail: </label>
+                    </div>
+                    <div class="col-8 text-left">
+                        <input type="email" id="bookingGuestMail" class="form-control" name="bookingGuestMail" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-4 text-right">
+                        <label for="bookingGuestPhone">Phone number: </label>
+                    </div>
+                    <div class="col-8 text-left">
+                        <input type="text" id="bookingGuestPhone" class="form-control" name="bookingGuestPhone" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-4 text-right">
+                        <label for="bookingGuestPassportNr">Passport Number: </label>
+                    </div>
+                    <div class="col-8 text-left">
+                        <input type="text" id="bookingGuestPassportNr" class="form-control" name="bookingGuestPassportNr" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-4 text-right">
+                        <label for="bookingGuestAddress">Street address: </label>
+                    </div>
+                    <div class="col-8 text-left">
+                        <input type="text" id="bookingGuestAddress" class="form-control" name="bookingGuestAddress" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-4 text-right">
+                        <label for="bookingGuestCity">Current city: </label>
+                    </div>
+                    <div class="col-8 text-left">
+                        <input type="text" id="bookingGuestCity" class="form-control" name="bookingGuestCity" required>
+                    </div>
+                </div>
+
+                <div id="guestValidationError" class="text-danger border border-danger rounded d-none"></div>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-5 booking-info">
+        <div class="booking-booking-info py-5">
+
+            <div class="row">
+                <div class="col-4 text-right"><b>Check-in date:</b></div>
+                <div id="bookingInfoCheckInDate" class="col-8 text-left"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-4 text-right"><b>Check-out date:</b></div>
+                <div id="bookingInfoCheckOutDate" class="col-8 text-left"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-4 text-right"><b>No. adults:</b></div>
+                <div id="bookingInfoAdults" class="col-8 text-left"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-4 text-right"><b>No. children:</b></div>
+                <div id="bookingInfoChildren" class="col-8 text-left"></div>
+            </div>
+
+        </div>
+        <div class="booking-room-info">
+
+            <div id="" class="d-none">
+                <div class="row">
+                    <div class="col-4 text-right"><b>Room id:</b></div>
+                    <div id="bookingRoomId" class="col-8 text-left"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4 text-right"><b>Room type:</b></div>
+                    <div id="bookingInfoRoomType" class="col-8 text-left"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4 text-right"><b>Price / night:</b></div>
+                    <div id="bookingInfoRoomPrice" class="col-8 text-left"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="mx-auto my-5"><h3> Total price: ¥<span id="bookingTotalPrice"></span></h3>
+    <button class="btn btn-success mb-2" id="submitBooking">Confirm booking</button></div>
+
+</div>
+
+
+<!-- CONFIRM BOOKING MODAL -->
+<!-- Guest: VIEW Details Modal -->
+<div class="modal fade" id="bookingConfirmedModal" tabindex="-1" role="dialog" aria-labelledby="bookingConfirmedModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="bookingConfirmedModalLabel">Booking</h5>
+                <button type="button" class="close booking-close-button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container mx-auto">
+
+                        <!-- All booking information fields, filled in with JQuery from selected guest ID -->
+                    <h4><b>Booking confirmed!</b></h4>
+
+                        <div class="booking-confirmed-info py-1">
+
+                            <div class="row">
+                                <div class="col-6 text-right"><b>Check-in date:</b></div>
+                                <div id="bookingConfirmedCheckInDate" class="col-6 text-left"></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6 text-right"><b>Check-out date:</b></div>
+                                <div id="bookingConfirmedCheckOutDate" class="col-6 text-left"></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6 text-right"><b>Total number of guests:</b></div>
+                                <div id="bookingConfirmedTotalGuests" class="col-6 text-left"></div>
+                            </div>
+
+                        </div>
+                        <div class="booking-confirmed-room-info py-3">
+                            <div>
+                                <h5>Selected rooms: </h5>
+                                <ul id="bookingConfirmedRoomList">
+                                </ul>
+                            </div>
+
+                        </div>
+
+                            <div class="container booking-confirmed-guest-info">
+
+                                <h5>Guest details: </h5>
+
+                                <div class="row">
+                                    <div class="col-6 text-right">
+                                        <b>Guest name:</b>
+                                    </div>
+                                    <div id="bookingConfirmedGuestName" class="col-6 text-left"></div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6 text-right">
+                                        <b>Date of Birth:</b>
+                                    </div>
+                                    <div id="bookingConfirmedGuestBirthDate" class="col-6 text-left"></div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6 text-right">
+                                        <b>E-mail address:</b>
+                                    </div>
+                                    <div id="bookingConfirmedGuestMail" class="col-6 text-left"></div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6 text-right">
+                                        <b>Passport number:</b>
+                                    </div>
+                                    <div id="bookingConfirmedGuestPassportNr" class="col-6 text-left"></div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6 text-right">
+                                        <b>Street address:</b>
+                                    </div>
+                                    <div id="bookingConfirmedGuestAddress" class="col-6 text-left"></div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6 text-right">
+                                        <b>Current city:</b>
+                                    </div>
+                                    <div id="bookingConfirmedGuestCity" class="col-6 text-left"></div>
+                                </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <!--            Edit button to open the edit modal:    -->
+                <button type="button" class="btn btn-secondary booking-close-button" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- WARNING MODAL -->
+<div class="modal fade" id="warningModal" tabindex="-1" role="dialog" aria-labelledby="warningModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="warningModalLabel">Warning</h5>
+                <button type="button" class="close booking-close-button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="warningModalBody">
+
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-secondary booking-close-button" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--todo: add confirmation modal-->
+<!--todo: validations-->
+
+{{>footer}}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rooms - Molveno Lake Resort</title>
+
+    <!-- Fonts    -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,400,500,800,900|Ubuntu:400,500,700&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheets    -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/rooms.css">
+
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha384-wxqG4glGB3nlqX0bi23nmgwCSjWIW13BdLUEYC4VIMehfbcro/ATkyDsF/AbIOVe" crossorigin="anonymous">
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body>
+
+<!--NAVBAR -->
+<div class="container-fluid gradient-bg sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light col-lg-10 m-auto">
+        <a class="navbar-brand h1" href="../../index.html"><img class="pr-5" src="../../img/Company%20Logo_small.png" height="80px">Molveno Lake Resort</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Rooms</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link ml-md-2" href="../../users/login.html"><i class="mr-md-2 far fa-user"></i><span class="navbar-login ml-2">Login</span></a>
+                </li>
+                <li class="nav-item nav-flags flex-md-column">
+                    <div class="flag-div"><a class="nav-flag" href="#"><img class="flag" src="../../img/flaguk.png" alt="English"></a></div>
+                    <div class="flag-div"><a class="nav-flag" href="#"><img class="flag" src="../../img/flagzh.png" alt="Chinese"></a></div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<!--ROOM STOCK PHOTO -->
+<div class="index-picture">
+		<img class="stockhotel img-fluid" src="../../img/roomstock.jpg">
+</div>
+
+<!-- INPUT SECTION -->
+<div class="input-section">
+    <form class="form-inline">
+
+				<div class="form-group">
+					<label class="mr-2" for="check-in">Check-in:</label>
+					<input type="date" class="date-input form-control mb-2 mr-sm-2" id="check-in" name="check-in" placeholder="">
+				</div>
+				<div class="form-group">
+					<label class="mr-2" for="check-out">Check-out:</label>
+					<input type="date" class="date-input form-control mb-2 mr-sm-2" id="check-out" name="check-out" placeholder="">
+				</div>
+
+			<div class="form-group">
+
+				<div class="form-group">
+	        <label class="mr-2" for="adults">Adults:</label>
+	        <input type="number" class="number-input form-control mb-2 mr-sm-2" id="adults" name="adults" placeholder="0" min="0">
+				</div>
+				<div class="form-group">
+	        <label class="mr-2" for="children">Children:</label>
+	        <input type="number" class="number-input form-control mb-2 mr-sm-2" id="children" name="children" placeholder="0" min="0">
+				</div>
+
+        <div class="form-check mb-2 mr-sm-2">
+          <input class="form-check-input" type="checkbox" id="disabled">
+          <label class="form-check-label" for="disabled">Disability-friendly rooms</label>
+        </div>
+			</div>
+
+    </form>
+    <button type="submit" class="btn btn-primary mb-2">Find rooms!</button>
+</div>
+
+
+<!--PAGE CONTENT HERE -->
+
+
+<div class="card-container">
+	<div class="row">
+
+<!-- Single room -->
+		<div class="col-md-6 col-xl-3 mx-0 d-flex align-items-stretch card-column justify-content-center">
+			<div class="card shadow">
+				<img src="../../img/roomsingle.png" class="card-img-top" alt="Single Room">
+				<div class="card-body">
+					<h5 class="card-title">Single Room</h5>
+					<p><i class="fas fa fa-male"></i> &nbsp;&nbsp; <i class="fas fa-baby"></i></p>
+					<p>Free Wi-Fi</p>
+					<p>Bath and shower</p>
+					<p class="available"><small>Available: 13</small></p>
+					<p class="icon-row d-flex justify-content-between">
+						<span><i>¥849 per night</i>&nbsp;</span>
+						<span><button type="button" class="btn btn-primary add-room" id="addSingleRoom">+</button></span>
+					</p>
+				</div>
+	    	</div>
+		</div>
+
+<!-- Double room -->
+		<div class="col-md-6 col-xl-3 mx-0  d-flex align-items-stretch card-column justify-content-center">
+			<div class="card shadow">
+				<img src="../../img/roomdouble.png" class="card-img-top" alt="Single Room">
+				<div class="card-body">
+					<h5 class="card-title">Double Room</h5>
+					<p><i class="fas fa fa-male"></i> <i class="fas fa fa-male"></i> &nbsp;&nbsp; <i class="fas fa-baby"></i> <i class="fas fa-baby"></i></p>
+					<p>Airconditioning</p>
+					<p>Private safe</p>
+					<p class="available"><small>Available: 8</small></p>
+					<p class="icon-row d-flex justify-content-between">
+						<span><i>¥1199 per night</i>&nbsp;</span>
+						<span><button type="button" class="btn btn-primary add-room" id="addDoubleRoom">+</button></span>
+					</p>
+				</div>
+			</div>
+		</div>
+<!-- Family room -->
+		<div class="col-md-6 col-xl-3 mx-0 d-flex align-items-stretch card-column justify-content-center">
+			<div class="card shadow">
+				<img src="../../img/roomfamily.png" class="card-img-top" alt="Single Room">
+				<div class="card-body">
+					<h5 class="card-title">Family Room</h5>
+					<p><i class="fas fa fa-male"></i> <i class="fas fa fa-male"></i> <i class="fas fa fa-male"></i> <i class="fas fa fa-male"></i> &nbsp;&nbsp; <i class="fas fa-baby"></i> <i class="fas fa-baby"></i></p>
+					<p>Sonos Sound System</p>
+					<p>Television</p>
+					<p class="available"><small>Available: 5</small></p>
+					<p class="icon-row d-flex justify-content-between">
+						<span><i>¥1649 per night</i> &nbsp;</span>
+						<span><button type="button" class="btn btn-primary add-room" id="addFamilyRoom">+</button></span>
+					</p>
+				</div>
+			</div>
+		</div>
+<!-- Penthouse -->
+		<div class="col-md-6 col-xl-3 mx-0 d-flex align-items-stretch card-column justify-content-center">
+			<div class="card shadow">
+				<img src="../../img/roompenthouse.png" class="card-img-top" alt="Single Room">
+				<div class="card-body">
+					<h5 class="card-title">Penthouse</h5>
+					<p><i class="fas fa fa-male"></i> <i class="fas fa fa-male"></i> <i class="fas fa fa-male"></i> <i class="fas fa fa-male"></i> &nbsp;&nbsp; <i class="fas fa fa-male"></i> <i class="fas fa fa-male"></i> <i class="fas fa fa-male"></i> <i class="fas fa fa-male"></i> &nbsp;&nbsp; <i class="fas fa-baby"></i> <i class="fas fa-baby"></i></p>
+					<p>Minibar</p>
+					<p>Ultimate luxury</p>
+					<p class="available"><small>Available: 2</small></p>
+					<p class="icon-row d-flex justify-content-between">
+						<span><i>¥2399 per night</i>&nbsp;</span>
+						<span><button type="button" class="btn btn-primary add-room" id="addPenthouseRoom">+</button></span>
+					</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+
+<!-- FOOTER -->
+<div class="container-fluid footer gradient-bg-rev">
+    <div class="row ">
+        <div class="d-flex col-md-6 justify-content-center footer-phone ">
+            <i class="fas fa-phone-alt"></i>&nbsp; +86 10 1234 5678
+        </div>
+        <div class="d-flex col-md-6 justify-content-center">
+            <ul class="d-flex p-0">
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="d-flex col-12 justify-content-center "><small>© Copyright Molveno Lake Resort 2020</small></div>
+    </div>
+</div>
+
+
+<script src="../../js/index.js" charset="utf-8"></script>
+
+</body>
+</html>

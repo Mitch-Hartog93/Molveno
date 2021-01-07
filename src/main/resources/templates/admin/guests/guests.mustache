@@ -1,0 +1,279 @@
+{{>admin/header-admin}}
+
+<!-- Page title-->
+
+<div class="container portal-title my-3">
+    Registered Guest List
+</div>
+
+<!-- Data table die wordt ingelezen vanuit Datatable Library -->
+<div class="data-table mx-auto my-5">
+    <table id="guestTable" class="display mx-auto">
+</table>
+
+<!--Buttons underneath table for viewing, editing, deleting or adding guests -->
+
+
+    <!--Opens modal and gets guest details from selected row
+    Open modal through jQuery -->
+    <button id="viewGuestButton" type="button" class="btn btn-primary">View</button>
+
+    <!--Opens modal to edit guest details from selected row
+     Open modal through jQuery-->
+    <button type="button" type="button" class="btn btn-warning editGuestButton">Edit</button>
+
+    <!--Opens modal to delete guest from selected row -->
+    <button id="deleteGuestButton" type="button" class="btn btn-danger">Delete</button>
+    <button id="newGuestButton" type="button" class="btn btn-success">New</button>
+
+<div>
+    <button id="fetchGuestList" class="btn btn-primary mt-4">Fetch data</button>
+    <button id="clearGuestList" class="btn btn-warning mt-4">Clear data</button>
+</div>
+
+    <hr>
+</div>
+
+<!-- Guest: VIEW Details Modal -->
+<div class="modal fade" id="viewGuestModal" tabindex="-1" role="dialog" aria-labelledby="viewGuestModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="viewGuestModalLabel">Guest Details</h5>
+                <button type="button" class="close guest-close-button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- All guest information fields, filled in with JQuery from selected guest ID -->
+                        <div class="d-none">
+                            <div class="col-6 text-right">
+                                <b>Guest ID:</b>
+                            </div>
+                            <div id="viewGuestId" class="col-6 text-left"></div>
+                        </div>
+
+
+                        <div class="col-6 text-right">
+                            <b>Guest name:</b>
+                        </div>
+                        <div id="viewGuestName" class="col-6 text-left"></div>
+
+                        <div class="col-6 text-right">
+                            <b>Date of Birth:</b>
+                        </div>
+                        <div id="viewGuestBirthDate" class="col-6 text-left"></div>
+
+                        <div class="col-6 text-right">
+                            <b>E-mail address:</b>
+                        </div>
+                        <div id="viewGuestMail" class="col-6 text-left"></div>
+
+                        <div class="col-6 text-right">
+                            <b>Phone number:</b>
+                        </div>
+                        <div id="viewGuestPhone" class="col-6 text-left"></div>
+
+                        <div class="col-6 text-right">
+                            <b>Passport number:</b>
+                        </div>
+                        <div id="viewGuestPassportNr" class="col-6 text-left"></div>
+
+                        <div class="col-6 text-right">
+                            <b>Street address:</b>
+                        </div>
+                        <div id="viewGuestAddress" class="col-6 text-left"></div>
+
+                        <div class="col-6 text-right">
+                            <b>Current city:</b>
+                        </div>
+                        <div id="viewGuestCity" class="col-6 text-left"></div>
+
+                        <div class="col-6 text-right">
+                            <b>Current booking numbers:</b>
+                        </div>
+                        <div id="viewGuestBookings" class="col-6 text-left"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+<!--            Edit button to open the edit modal:    -->
+                <button type="button" class="btn btn-warning editGuestButton" data-dismiss="modal" data-toggle="modal" data-target="#editGuestModal">Edit</button>
+                <button type="button" class="btn btn-secondary guest-close-button" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Guest: EDIT Details Modal -->
+<div class="modal fade" id="editGuestModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <form id="editGuestForm" class="needs-validation" novalidate>
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Enter Guest Details</h5>
+                <button type="button" class="close guest-close-button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="container-fluid w-75">
+                        <!-- All guest information input fields, filled in with JQuery from selected guest ID or create new-->
+                        <div class="form-group row d-none">
+                            <div class="col-4 text-right">
+                                <label for="editGuestId">Guest ID: </label>
+                            </div>
+                            <div class="col-8 text-left">
+                                <input type="number" id="editGuestId" class="form-control" name="editGuestId" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-4 text-right">
+                                <label for="editGuestName">Guest Name: </label>
+                            </div>
+                            <div class="col-8 text-left">
+                                <input type="text" id="editGuestName" class="form-control" name="editGuestName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-4 text-right">
+                                <label for="editGuestBirthDate">Date of Birth: </label>
+                            </div>
+                            <div class="col-8 text-left">
+                                <input type="text" id="editGuestBirthDate" class="datepicker" name="editGuestBirthDate" placeholder="dd-MM-yyyy" required>
+                            </div>
+                            <div class="invalid-feedback" id="invalidGuestAge">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-4 text-right">
+                                <label for="editGuestMail">E-mail: </label>
+                            </div>
+                            <div class="col-8 text-left">
+                                <input type="email" id="editGuestMail" class="form-control" name="editGuestMail" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-4 text-right">
+                                <label for="editGuestPhone">Phone number: </label>
+                            </div>
+                            <div class="col-8 text-left">
+                                <input type="text" id="editGuestPhone" class="form-control" name="editGuestPhone" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-4 text-right">
+                                <label for="editGuestPassportNr">Passport Number: </label>
+                            </div>
+                            <div class="col-8 text-left">
+                                <input type="text" id="editGuestPassportNr" class="form-control" name="editGuestPassportNr" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-4 text-right">
+                                <label for="editGuestAddress">Street address: </label>
+                            </div>
+                            <div class="col-8 text-left">
+                                <input type="text" id="editGuestAddress" class="form-control" name="editGuestAddress" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-4 text-right">
+                                <label for="editGuestCity">Current city: </label>
+                            </div>
+                            <div class="col-8 text-left">
+                                <input type="text" id="editGuestCity" class="form-control" name="editGuestCity" required>
+                            </div>
+                        </div>
+
+
+                    <div id="guestValidationError" class="text-danger border border-danger rounded d-none"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <!--            Save edit of guest    -->
+                <button type="submit" id="saveGuestButton" class="btn btn-success">Save</button>
+                <button type="button" class="btn btn-secondary guest-close-button" data-dismiss="modal">Close</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- Guest: DELETE Confirmation Modal -->
+<div class="modal fade" id="deleteGuestModal" tabindex="-1" role="dialog" aria-labelledby="deleteGuestModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteGuestModalLabel">Guest Deletion</h5>
+                <button type="button" class="close guest-close-button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you wish to delete this guest?
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" id="deleteGuestConfirmButton" class="btn btn-danger" data-dismiss="modal">Delete</button>
+                <button type="button" class="btn btn-secondary guest-close-button" data-dismiss="modal">Cancel</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- No guest selected Modal -->
+<div class="modal fade" id="noGuestSelectedModal" tabindex="-1" role="dialog" aria-labelledby="noGuestSelectedModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="noGuestSelectedModalLabel">Guest selection</h5>
+                <button type="button" class="close guest-close-button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                No guest selected.
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-secondary guest-close-button" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Warning Modal -->
+<div class="modal fade" id="guestWarningModal" tabindex="-1" role="dialog" aria-labelledby="guestWarningModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header ">
+                <h5 class="modal-title" id="guestWarningModalLabel">Warning</h5>
+                <button type="button" class="close guest-close-button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-secondary guest-close-button" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{>admin/footer-admin}}

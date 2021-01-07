@@ -1,0 +1,163 @@
+{{>header}}
+
+
+<!--ROOM STOCK PHOTO -->
+<div class="index-picture">
+    <img class="stockhotel img-fluid" src="/img/roomstock.jpg">
+</div>
+
+<!-- INPUT SECTION -->
+<div class="input-section">
+    <form>
+
+        <div class="row input-row mx-auto">
+            <div class="form-group col-sm-6">
+                <label class="mr-2" for="formCheckInDate">Check-in:</label>
+                <input type="text" id="formCheckInDate" class="datepicker" name="formCheckInDate" placeholder="dd-MM-yyyy" required>
+<!--                <input type="date" class="date-input form-control mb-2 mr-sm-2" id="check-in" name="check-in" placeholder="">-->
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="mr-2" for="formCheckOutDate">Check-out:</label>
+                <input type="text" id="formCheckOutDate" class="datepicker" name="formCheckOutDate" placeholder="dd-MM-yyyy" required>
+<!--                <input type="date" class="date-input form-control mb-2 mr-sm-2" id="check-out" name="check-out" placeholder="">-->
+            </div>
+        </div>
+
+        <div class="row form-inline">
+
+            <div class="form-group">
+                <label class="mr-2" for="noOfAdults">Adults:</label>
+                <input type="number" class="number-input form-control mb-2 mr-sm-2" id="noOfAdults" name="noOfAdults" value="1" min="0">
+            </div>
+            <div class="form-group">
+                <label class="mr-2" for="noOfChildren">Children:</label>
+                <input type="number" class="number-input form-control mb-2 mr-sm-2" id="noOfChildren" name="noOfChildren" value="0" min="0">
+            </div>
+            <div class="form-check mb-2 mr-sm-2">
+                <input class="form-check-input" type="checkbox" id="disabled">
+                <label class="form-check-label" for="disabled">Disability-friendly rooms</label>
+            </div>
+        </div>
+
+    </form>
+    <button id="findRooms" class="btn btn-primary mb-2">Find rooms!</button>
+</div>
+
+
+<!--PAGE CONTENT HERE -->
+
+
+<div class="card-container">
+    <div class="row">
+
+        <!-- Single room -->
+        <div class="col-md-6 col-xl-3 mx-0 d-flex align-items-stretch card-column justify-content-center">
+            <div class="card shadow">
+                <img src="../../img/roomsingle.png" class="card-img-top" alt="Single Room">
+                <div class="card-body">
+                    <h5 class="card-title">Single Room</h5>
+                    <p><i class="fas fa fa-male"></i> &nbsp;&nbsp; <i class="fas fa-baby"></i></p>
+                    <p>Free Wi-Fi</p>
+                    <p>Bath and shower</p>
+                    <p class="available"><small>Available: <span id="singleRoomListSize"></span></small></p>
+                    <p class="icon-row d-flex justify-content-between">
+                        <span><i>¥849 per night</i>&nbsp;</span>
+                        <span><button type="button" class="btn btn-primary add-room" id="single">+</button></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Double room -->
+        <div class="col-md-6 col-xl-3 mx-0  d-flex align-items-stretch card-column justify-content-center">
+            <div class="card shadow">
+                <img src="../../img/roomdouble.png" class="card-img-top" alt="Single Room">
+                <div class="card-body">
+                    <h5 class="card-title">Double Room</h5>
+                    <p><i class="fas fa fa-male"></i> <i class="fas fa fa-male"></i> &nbsp;&nbsp; <i class="fas fa-baby"></i> <i class="fas fa-baby"></i></p>
+                    <p>Airconditioning</p>
+                    <p>Private safe</p>
+                    <p class="available"><small>Available: <span id="doubleRoomListSize"></span></small></p>
+                    <p class="icon-row d-flex justify-content-between">
+                        <span><i>¥1199 per night</i>&nbsp;</span>
+                        <span><button type="button" class="btn btn-primary add-room" id="double">+</button></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Family room -->
+        <div class="col-md-6 col-xl-3 mx-0 d-flex align-items-stretch card-column justify-content-center">
+            <div class="card shadow">
+                <img src="../../img/roomfamily.png" class="card-img-top" alt="Single Room">
+                <div class="card-body">
+                    <h5 class="card-title">Family Room</h5>
+                    <p><i class="fas fa fa-male"></i> <i class="fas fa fa-male"></i> <i class="fas fa fa-male"></i> <i class="fas fa fa-male"></i> &nbsp;&nbsp; <i class="fas fa-baby"></i> <i class="fas fa-baby"></i></p>
+                    <p>Sonos Sound System</p>
+                    <p>Television</p>
+                    <p class="available"><small>Available: <span id="familyRoomListSize"></span></small></p>
+                    <p class="icon-row d-flex justify-content-between">
+                        <span><i>¥1649 per night</i> &nbsp;</span>
+                        <span><button type="button" class="btn btn-primary add-room" id="family">+</button></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Penthouse -->
+        <div class="col-md-6 col-xl-3 mx-0 d-flex align-items-stretch card-column justify-content-center">
+            <div class="card shadow">
+                <img src="../../img/roompenthouse.png" class="card-img-top" alt="Single Room">
+                <div class="card-body">
+                    <h5 class="card-title">Penthouse</h5>
+                    <p><i class="fas fa fa-male"></i> <i class="fas fa fa-male"></i> <i class="fas fa fa-male"></i> <i class="fas fa fa-male"></i> &nbsp;&nbsp; <i class="fas fa fa-male"></i> <i class="fas fa fa-male"></i> <i class="fas fa fa-male"></i> <i class="fas fa fa-male"></i> &nbsp;&nbsp; <i class="fas fa-baby"></i> <i class="fas fa-baby"></i></p>
+                    <p>Minibar</p>
+                    <p>Ultimate luxury</p>
+                    <p class="available"><small>Available: <span id="penthouseRoomListSize"></span></small></p>
+                    <p class="icon-row d-flex justify-content-between">
+                        <span><i>¥2399 per night</i>&nbsp;</span>
+                        <span><button type="button" class="btn btn-primary add-room" id="penthouse">+</button></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div>
+    <h5>Selected rooms: </h5>
+    <ul id="selectedRoomList">
+
+    </ul>
+</div>
+
+<div>
+    <button id="newBookingButton" class="btn btn-success btn-lg my-5">Book selected rooms!</button>
+</div>
+
+
+
+
+<!-- WARNING MODAL -->
+<div class="modal fade" id="warningModal" tabindex="-1" role="dialog" aria-labelledby="warningModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="warningModalLabel">Warning</h5>
+                <button type="button" class="close booking-close-button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="warningModalBody">
+
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-secondary booking-close-button" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{{>footer}}
