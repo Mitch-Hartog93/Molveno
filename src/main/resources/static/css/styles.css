@@ -145,16 +145,16 @@ hr {
 		margin-left: 3rem;
 	}
 }
-
+/* Changed width from 100% to 10% to make non-responsive */
 @media screen and (max-width: 768px) {
 	.textcolumn {
-		width: 100%;
+		width: 10%;
 		padding: 0 3rem;
 	}
 
-
+/* Changed width from 100% to 10% to make non-responsive */
 	.imgcolumn {
-		width: 100%;
+		width: 10%;
 	}
 
 	.section-img {
@@ -162,9 +162,9 @@ hr {
         height: auto;
         }
 
-
+/* Changed width from 100% to 10% to make non-responsive */
 	.footer {
-    	width: 100%;
+    	width: 10%;
     	padding: 1.5rem;
     }
 
