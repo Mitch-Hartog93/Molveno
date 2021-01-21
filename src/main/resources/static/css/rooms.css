@@ -65,7 +65,7 @@ p {
 }
 
 .btn-primary {
-	background-color: #309bcf;
+	background-color: /* #309bcf; */ #FFFFFF;  /* /* Changed button color to white */
 	border-color: #309bcf;
 }
 
