@@ -1002,13 +1002,13 @@ a.ui-button:active,
 .ui-state-highlight,
 .ui-widget-content .ui-state-highlight,
 .ui-widget-header .ui-state-highlight {
-    border: 1px solid #f9dd34;
-    background: #ffef8f url("images/ui-bg_highlight-soft_25_ffef8f_1x100.png") 50% top repeat-x;
+  /*  border: 1px solid #f9dd34; */    /* date picker changed */
+  /*  background: #ffef8f url("images/ui-bg_highlight-soft_25_ffef8f_1x100.png") 50% top repeat-x; */
     color: #363636;
 }
 .ui-state-checked {
-    border: 1px solid #f9dd34;
-    background: #ffef8f;
+   /* border: 1px solid #f9dd34; */     /* date picker changed */
+  /*  background: #ffef8f; */
 }
 .ui-state-highlight a,
 .ui-widget-content .ui-state-highlight a,

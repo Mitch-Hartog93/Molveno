@@ -25,7 +25,7 @@ div.ui-datepicker{
 
 .Highlighted a {
 	border: 1px solid #309bcf !important;
-	background: #97c0ff !important;
+	/* background: #97c0ff !important; */ /* hier is de background color veranderd */
 }
 
 /* NAVBAR */
