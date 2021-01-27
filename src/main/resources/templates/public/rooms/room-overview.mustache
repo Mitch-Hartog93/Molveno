@@ -7,18 +7,18 @@
 </div>
 
 <!-- INPUT SECTION -->
-<div class="input-section">
+<div class="input-section" >
     <form>
 
         <div class="row input-row mx-auto">
             <div class="form-group col-sm-6">
                 <label class="mr-2" for="formCheckInDate">Check-in:</label>
-                <input type="text" id="formCheckInDate" class="datepicker" name="formCheckInDate" placeholder="dd-MM-yyyy" required>
+                <input type="text" id="formCheckInDate" class="datepicker" tabindex="-1" name="formCheckInDate" placeholder="dd-MM-yyyy" required>
 <!--                <input type="date" class="date-input form-control mb-2 mr-sm-2" id="check-in" name="check-in" placeholder="">-->
             </div>
             <div class="form-group col-sm-6">
                 <label class="mr-2" for="formCheckOutDate">Check-out:</label>
-                <input type="text" id="formCheckOutDate" class="datepicker" name="formCheckOutDate" placeholder="dd-MM-yyyy" required>
+                <input type="text" id="formCheckOutDate" class="datepicker" tabindex="-1" name="formCheckOutDate" placeholder="dd-MM-yyyy" required>
 <!--                <input type="date" class="date-input form-control mb-2 mr-sm-2" id="check-out" name="check-out" placeholder="">-->
             </div>
         </div>
@@ -27,20 +27,20 @@
 
             <div class="form-group">
                 <label class="mr-2" for="noOfAdults">Adults:</label>
-                <input type="number" class="number-input form-control mb-2 mr-sm-2" id="" name="noOfAdults" value="1" min="0">
+                <input type="number" tabindex="-1" class="number-input form-control mb-2 mr-sm-2" id="" name="noOfAdults" value="1" min="0">
             </div>
             <div class="form-group">
                 <label class="mr-2" for="noOfChildren">Children:</label>
-                <input type="number" class="number-input form-control mb-2 mr-sm-2" id="" name="noOfChildren" value="0" min="0">
+                <input type="number" tabindex="-1" class="number-input form-control mb-2 mr-sm-2" id="" name="noOfChildren" value="0" min="0">
             </div>
             <div class="form-check mb-2 mr-sm-2">
-                <input class="form-check-input" type="checkbox" id="disabled">
+                <input class="form-check-input" tabindex="-1" type="checkbox" id="disabled">
                 <label class="form-check-label" for="disabled">Disability-friendly rooms</label>
             </div>
         </div>
 
     </form>
-    <button id="findRooms" class="btn btn-primary mb-2">Find rooms!</button>
+    <button id="findRooms" tabindex="-1" class="btn btn-primary mb-2">Find rooms!</button>
 </div>
 
 
@@ -62,7 +62,7 @@
                     <p class="available"><small>Available: <span id="singleRoomListSize"></span></small></p>
                     <p class="icon-row d-flex justify-content-between">
                         <span><i>¥849 per night</i>&nbsp;</span>
-                        <span><button type="button" class="btn btn-primary add-room" id="single">+</button></span>
+                        <span><button type="button" tabindex="-1" class="btn btn-primary add-room" id="single">+</button></span>
                     </p>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                     <p class="available"><small>Available: <span id="doubleRoomListSize"></span></small></p>
                     <p class="icon-row d-flex justify-content-between">
                         <span><i>¥1199 per night</i>&nbsp;</span>
-                        <span><button type="button" class="btn btn-primary add-room" id="double">+</button></span>
+                        <span><button type="button" tabindex="-1" class="btn btn-primary add-room" id="double">+</button></span>
                     </p>
                 </div>
             </div>
@@ -97,7 +97,7 @@
                     <p class="available"><small>Available: <span id="familyRoomListSize"></span></small></p>
                     <p class="icon-row d-flex justify-content-between">
                         <span><i>¥1649 per night</i> &nbsp;</span>
-                        <span><button type="button" class="btn btn-primary add-room" id="family">+</button></span>
+                        <span><button type="button" tabindex="-1" class="btn btn-primary add-room" id="family">+</button></span>
                     </p>
                 </div>
             </div>
@@ -114,7 +114,7 @@
                     <p class="available"><small>Available: <span id="penthouseRoomListSize"></span></small></p>
                     <p class="icon-row d-flex justify-content-between">
                         <span><i>¥2399 per night</i>&nbsp;</span>
-                        <span><button type="button" class="btn btn-primary add-room" id="penthouse">+</button></span>
+                        <span><button type="button" tabindex="-1" class="btn btn-primary add-room" id="penthouse">+</button></span>
                     </p>
                 </div>
             </div>
@@ -131,7 +131,7 @@
 </div>
 
 <div>
-    <button id="newBookingButton" class="btn btn-success btn-lg my-5">Book selected rooms!</button>
+    <button id="newBookingButton" tabindex="-1" class="btn btn-success btn-lg my-5">Book selected rooms!</button>
 </div>
 
 
