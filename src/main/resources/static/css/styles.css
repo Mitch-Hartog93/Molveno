@@ -44,6 +44,7 @@ div.ui-datepicker{
 	font-size: 1.5rem;
 }
 
+
 /* CONTAINERS */
 
 .home-content {
@@ -132,4 +133,25 @@ hr {
     	margin-top: 1rem;
     }
 
+
+}
+    /* Changed to create a hover for requirement 1.4.13 Content bij hover of focus */
+[role="tooltip"] {
+    display: none;
+    padding: 1.5em;
+    background:white;
+    color: black;
+    border:solid black 2px;
+    width:10em;
+}
+
+.a-and-tooltip {
+  position: relative;
+  color: black;
+}
+
+[role="tooltip"] {
+    position: absolute;
+    left:0;
+    top:1em;
 }
