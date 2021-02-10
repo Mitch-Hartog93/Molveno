@@ -173,8 +173,6 @@ hr {
     	margin-top: 1rem;
     }
 
-
-}
     /* Changed to create a hover for requirement 1.4.13 Content bij hover of focus */
 [role="tooltip"] {
     display: none;
@@ -194,4 +192,6 @@ hr {
     position: absolute;
     left:0;
     top:1em;
+}
+
 }
