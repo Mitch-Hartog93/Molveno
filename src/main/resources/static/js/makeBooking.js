@@ -41,6 +41,9 @@ $("#findRooms").click(function() {
     } else {
         $("#warningModalBody").html("Select a check-in and check-out date first.")
         $("#warningModal").modal("show");
+        setTimeout(function(){
+            $("#warningModal").modal("hide");
+        }, 60000);
     }
 });
 
@@ -52,6 +55,9 @@ $("#newBookingButton").click(function() {
     if ((sessionStorage.getItem("selectedRooms") == "") || (sessionStorage.getItem("selectedRooms") == undefined || (sessionStorage.getItem("selectedRooms").length == 0) )) {
         $("#warningModalBody").html("You need to select at least one room.")
         $("#warningModal").modal("show");
+        setTimeout(function(){
+            $("#warningModal").modal("hide");
+        }, 60000);
     } else {
         setSessionStorage();
         window.location = "http://localhost:8080/public/rooms/book-room";
@@ -66,6 +72,9 @@ $("#submitBooking").click(function() {
     } else {
         $("#warningModalBody").html("Make sure all guest information is filled in and correct.")
         $("#warningModal").modal("show");
+        setTimeout(function(){
+            $("#warningModal").modal("hide");
+        }, 60000);
     }
 });
 
@@ -264,6 +273,9 @@ function addRoomSelection(buttonId) {
             console.log("No single rooms available!");
             $("#warningModalBody").html("No single rooms available for your selected dates.")
             $("#warningModal").modal("show");
+            setTimeout(function(){
+                $("#warningModal").modal("hide");
+            }, 60000);
             return;
             }
         } else if (roomType == "double") {
@@ -274,6 +286,9 @@ function addRoomSelection(buttonId) {
             console.log("No double rooms available!");
             $("#warningModalBody").html("No double rooms available for your selected dates.")
             $("#warningModal").modal("show");
+            setTimeout(function(){
+                $("#warningModal").modal("hide");
+            }, 60000);
             return;
             }
         } else if (roomType == "family") {
@@ -284,6 +299,9 @@ function addRoomSelection(buttonId) {
             console.log("No family rooms available!");
             $("#warningModalBody").html("No family rooms available for your selected dates.")
             $("#warningModal").modal("show");
+            setTimeout(function(){
+                $("#warningModal").modal("hide");
+            }, 60000);
             return;
             }
         } else if (roomType == "penthouse") {
@@ -294,6 +312,9 @@ function addRoomSelection(buttonId) {
             console.log("No penthouse rooms available!");
             $("#warningModalBody").html("No penthouse rooms available for your selected dates.")
             $("#warningModal").modal("show");
+            setTimeout(function(){
+                $("#warningModal").modal("hide");
+            }, 60000);
             return;
             }
         }

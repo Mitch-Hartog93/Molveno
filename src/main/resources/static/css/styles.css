@@ -6,6 +6,8 @@ body {
     text-align: center;
     padding: 0;
     color: #4d96e4;
+    max-width: 960pt;
+    min-width: 960pt;
 }
 
 li {
@@ -42,6 +44,7 @@ div.ui-datepicker{
 	font-size: 1.5rem;
 }
 
+
 /* CONTAINERS */
 
 .home-content {
@@ -50,16 +53,16 @@ div.ui-datepicker{
 
 .section-row {
 	width: 70vw;
-}
+}*/
 
-/*.textcolumn {
+.textcolumn {
 	width: 60%;
 	padding: 0 1rem;
 }*/
 
 /* INDEX SECTIONS */
 
-/*.imgcolumn {
+.imgcolumn {
 	width: 30%;
 }*/
 
@@ -118,49 +121,7 @@ hr {
 
 /* MEDIA BREAKPOINTS */
 
-@media screen and (max-width: 1200px) {
-    .section-row {
-        width: 95vw;
-     }
 
-     .divider {
-     display: none;
-     }
-
-    .section-img {
-    max-width: 260px;
-    height: auto;
-    }
-}
-
-@media screen and (max-width: 992px) {
-	.flag-div {
-		display: inline-block;
-		width: 29px;
-	}
-}
-
-@media screen and (min-width: 992px) {
-	.nav-flag {
-		margin-left: 3rem;
-	}
-}
-/* Changed width from 100% to 10% to make non-responsive */
-@media screen and (max-width: 768px) {
-	.textcolumn {
-		width: 10%;
-		padding: 0 3rem;
-	}
-
-/* Changed width from 100% to 10% to make non-responsive */
-	.imgcolumn {
-		width: 10%;
-	}
-
-	.section-img {
-        max-width: 200px;
-        height: auto;
-        }
 
 /* Changed width from 100% to 10% to make non-responsive */
 	.footer {
@@ -171,5 +132,26 @@ hr {
 	.footer ul {
     	margin-top: 1rem;
     }
+
+    /* Changed to create a hover for requirement 1.4.13 Content bij hover of focus */
+[role="tooltip"] {
+    display: none;
+    padding: 1.5em;
+    background:white;
+    color: black;
+    border:solid black 2px;
+    width:10em;
+}
+
+.a-and-tooltip {
+  position: relative;
+  color: black;
+}
+
+[role="tooltip"] {
+    position: absolute;
+    left:0;
+    top:1em;
+}
 
 }
