@@ -19,6 +19,12 @@
                 <input type="text" id="formCheckOutDate" class="datepicker" tabindex="-1" name="formCheckOutDate" placeholder="dd-MM-yyyy" required>
 <!--                <input type="date" class="date-input form-control mb-2 mr-sm-2" id="check-out" name="check-out" placeholder="">-->
             </div>
+            <div class="form-group">
+                <input type="number" tabindex="-1" class="number-input form-control mb-2 mr-sm-2" id="" name="noOfVacations" value="0" min="0">
+            </div>
+            <div class="form-group">
+                <input type="number" tabindex="-1" class="number-input form-control mb-2 mr-sm-2" id="" name="incomePerYearInUSD" value="0" min="0">
+            </div>
         </div>
 
         <div class="row form-inline">
@@ -29,6 +35,16 @@
             <div class="form-group">
                 <input type="number" tabindex="-1" class="number-input form-control mb-2 mr-sm-2" id="" name="noOfChildren" value="0" min="0">
             </div>
+            <div class="form-group">
+                <select id="userGender" name="userGender" class="form-control mb-2 mr-sm-2">
+                    <option hidden disabled selected value> -- Kies uw geslacht -- </option>
+                    <option value="Man">Man</option>
+                    <option value="Vrouw">Vrouw</option>
+                    <option value="Anders">Anders</option>
+                    <option value="Wil-ik-niet-zeggen">Wil ik niet zeggen</option>
+                </select>
+            </div>
+
             <div class="form-check mb-2 mr-sm-2">
                 <input class="form-check-input" tabindex="-1" type="checkbox" id="disabled">
             </div>

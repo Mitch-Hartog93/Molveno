@@ -51,6 +51,10 @@ $(".add-room").click(function() {
     addRoomSelection($(this).attr('id'));
 });
 
+$("#userGender").on("click",function(){
+    $('#userGender').val('Anders');
+});
+
 $("#newBookingButton").click(function() {
     if ((sessionStorage.getItem("selectedRooms") == "") || (sessionStorage.getItem("selectedRooms") == undefined || (sessionStorage.getItem("selectedRooms").length == 0) )) {
         $("#warningModalBody").html("You need to select at least one room.")
