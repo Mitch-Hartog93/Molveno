@@ -39,7 +39,7 @@ $("#findRooms").click(function() {
         getAllRoomLists();
         setAvailableRoomListSize();
     } else {
-        $("#warningModalBody").html("Select a check-in and check-out date first.")
+        $("#warningModalBody").html("Error")
         $("#warningModal").modal("show");
         setTimeout(function(){
             $("#warningModal").modal("hide");
