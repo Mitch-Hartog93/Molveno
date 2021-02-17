@@ -39,11 +39,18 @@ $("#findRooms").click(function() {
         getAllRoomLists();
         setAvailableRoomListSize();
     } else {
-        $("#warningModalBody").html("Error")
+        $("#warningModalBody").html("Error - 60 seconds remaining")
         $("#warningModal").modal("show");
-        setTimeout(function(){
+        var timeleft = 60;
+        var downloadTimer = setInterval(function(){
+          if(timeleft <= 0){
+            clearInterval(downloadTimer);
             $("#warningModal").modal("hide");
-        }, 60000);
+          } else {
+            $("#warningModalBody").html("Error - " + timeleft + " seconds remaining");
+          }
+          timeleft -= 1;
+        }, 1000);
     }
 });
 
@@ -59,9 +66,16 @@ $("#newBookingButton").click(function() {
     if ((sessionStorage.getItem("selectedRooms") == "") || (sessionStorage.getItem("selectedRooms") == undefined || (sessionStorage.getItem("selectedRooms").length == 0) )) {
         $("#warningModalBody").html("You need to select at least one room.")
         $("#warningModal").modal("show");
-        setTimeout(function(){
-            $("#warningModal").modal("hide");
-        }, 60000);
+        var timeleft = 60;
+                var downloadTimer = setInterval(function(){
+                  if(timeleft <= 0){
+                    clearInterval(downloadTimer);
+                    $("#warningModal").modal("hide");
+                  } else {
+                    $("#warningModalBody").html("You need to select at least one room.<br>" + timeleft + " seconds remaining");
+                  }
+                  timeleft -= 1;
+                }, 1000);
     } else {
         setSessionStorage();
         window.location = "http://localhost:8080/public/rooms/book-room";
@@ -76,9 +90,16 @@ $("#submitBooking").click(function() {
     } else {
         $("#warningModalBody").html("Make sure all guest information is filled in and correct.")
         $("#warningModal").modal("show");
-        setTimeout(function(){
-            $("#warningModal").modal("hide");
-        }, 60000);
+        var timeleft = 60;
+                var downloadTimer = setInterval(function(){
+                  if(timeleft <= 0){
+                    clearInterval(downloadTimer);
+                    $("#warningModal").modal("hide");
+                  } else {
+                    $("#warningModalBody").html("Make sure all guest information is filled in and correct.<br>" + timeleft + " seconds remaining");
+                  }
+                  timeleft -= 1;
+                }, 1000);
     }
 });
 
@@ -277,9 +298,16 @@ function addRoomSelection(buttonId) {
             console.log("No single rooms available!");
             $("#warningModalBody").html("No single rooms available for your selected dates.")
             $("#warningModal").modal("show");
-            setTimeout(function(){
-                $("#warningModal").modal("hide");
-            }, 60000);
+            var timeleft = 60;
+                    var downloadTimer = setInterval(function(){
+                      if(timeleft <= 0){
+                        clearInterval(downloadTimer);
+                        $("#warningModal").modal("hide");
+                      } else {
+                        $("#warningModalBody").html("No single rooms available for your selected dates.<br>" + timeleft + " seconds remaining");
+                      }
+                      timeleft -= 1;
+                    }, 1000);
             return;
             }
         } else if (roomType == "double") {
@@ -290,9 +318,16 @@ function addRoomSelection(buttonId) {
             console.log("No double rooms available!");
             $("#warningModalBody").html("No double rooms available for your selected dates.")
             $("#warningModal").modal("show");
-            setTimeout(function(){
-                $("#warningModal").modal("hide");
-            }, 60000);
+            var timeleft = 60;
+                    var downloadTimer = setInterval(function(){
+                      if(timeleft <= 0){
+                        clearInterval(downloadTimer);
+                        $("#warningModal").modal("hide");
+                      } else {
+                        $("#warningModalBody").html("No double rooms available for your selected dates.<br>" + timeleft + " seconds remaining");
+                      }
+                      timeleft -= 1;
+                    }, 1000);
             return;
             }
         } else if (roomType == "family") {
@@ -303,9 +338,16 @@ function addRoomSelection(buttonId) {
             console.log("No family rooms available!");
             $("#warningModalBody").html("No family rooms available for your selected dates.")
             $("#warningModal").modal("show");
-            setTimeout(function(){
-                $("#warningModal").modal("hide");
-            }, 60000);
+            var timeleft = 60;
+                    var downloadTimer = setInterval(function(){
+                      if(timeleft <= 0){
+                        clearInterval(downloadTimer);
+                        $("#warningModal").modal("hide");
+                      } else {
+                        $("#warningModalBody").html("Eo family rooms available for your selected dates.<br>" + timeleft + " seconds remaining");
+                      }
+                      timeleft -= 1;
+                    }, 1000);
             return;
             }
         } else if (roomType == "penthouse") {
@@ -316,9 +358,16 @@ function addRoomSelection(buttonId) {
             console.log("No penthouse rooms available!");
             $("#warningModalBody").html("No penthouse rooms available for your selected dates.")
             $("#warningModal").modal("show");
-            setTimeout(function(){
-                $("#warningModal").modal("hide");
-            }, 60000);
+            var timeleft = 60;
+                    var downloadTimer = setInterval(function(){
+                      if(timeleft <= 0){
+                        clearInterval(downloadTimer);
+                        $("#warningModal").modal("hide");
+                      } else {
+                        $("#warningModalBody").html("No penthouse rooms available for your selected dates.<br>" + timeleft + " seconds remaining");
+                      }
+                      timeleft -= 1;
+                    }, 1000);
             return;
             }
         }
