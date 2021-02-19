@@ -99,6 +99,7 @@
                     <!-- All guest information input fields, filled in with JQuery from selected guest ID -->
                     <div class="form-group row">
                         <div class="col-4 text-right">
+                            <label for="editBookingId">Booking Number:</label>
                         </div>
                         <div class="col-8 text-left">
                             <input type="number" id="editBookingId" class="form-control" name="editId" disabled>
@@ -107,16 +108,21 @@
 
                     <div class="form-group row">
                         <div class="col-4 text-right">
+                            <label for="editBookingStatus">Status:</label>
                         </div>
                         <div class="col-8 text-left">
                             <input type="radio" id="editBookingStatusBooked" name="editBookingStatus" value="booked" required>
+                            <label for="editBookingStatusBooked">Booked</label>
                             <input type="radio" id="editBookingStatusReserved" name="editBookingStatus" value="reserved" required>
+                            <label for="editBookingStatusReserved">Reserved</label>
                             <input type="radio" id="editBookingStatusCanceled" name="editBookingStatus" value="cancelled" required>
+                            <label for="editBookingStatusCanceled">Cancelled</label>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <div class="col-4 text-right">
+                            <label for="editBookingGuestId">Guest ID:</label>
                         </div>
                         <div class="col-8 text-left">
                             <input type="number" id="editBookingGuestId" class="form-control" name="editBookingGuestId">
@@ -125,6 +131,7 @@
 
                     <div class="form-group row">
                         <div class="col-4 text-right">
+                            <label for="editBookingGuest">Guest:</label>
                         </div>
                         <div class="col-8 text-left">
                             <input type="text" id="editBookingGuest" class="form-control" name="editBookingGuest">
@@ -133,6 +140,7 @@
 
                     <div class="form-group row">
                         <div class="col-4 text-right">
+                            <label for="editBookingTotalGuests">No. of guests:</label>
                         </div>
                         <div class="col-8 text-left">
                             <input type="text" id="editBookingTotalGuests" class="form-control" name="editBookingTotalGuests">
@@ -141,6 +149,7 @@
 
                     <div class="form-group row">
                         <div class="col-4 text-right">
+                            <label for="editBookingRooms">Rooms:</label>
                         </div>
                         <div class="col-8 text-left">
                             <input type="text" id="editBookingRooms" class="form-control" name="editBookingRooms">
@@ -149,6 +158,7 @@
 
                     <div class="form-group row">
                         <div class="col-4 text-right">
+                            <label for="editBookingCheckIn">Check-in:</label>
                         </div>
                         <div class="col-8 text-left">
                             <input type="text" id="editBookingCheckIn" class="datepicker" name="editBookingCheckIn" placeholder="dd-MM-yyyy">
@@ -157,6 +167,7 @@
 
                     <div class="form-group row">
                         <div class="col-4 text-right">
+                            <label for="editBookingCheckOut">Check-out:</label>
                         </div>
                         <div class="col-8 text-left">
                             <input type="text" id="editBookingCheckOut" class="datepicker" name="editBookingCheckOut" placeholder="dd-MM-yyyy">
