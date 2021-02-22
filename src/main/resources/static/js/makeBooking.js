@@ -39,7 +39,7 @@ $("#findRooms").click(function() {
         getAllRoomLists();
         setAvailableRoomListSize();
     } else {
-        $("#warningModalBody").html("Error - 60 seconds remaining")
+        $("#warningModalBody").html("60 seconds remaining")
         $("#warningModal").modal("show");
         var timeleft = 60;
         var downloadTimer = setInterval(function(){
@@ -47,7 +47,7 @@ $("#findRooms").click(function() {
             clearInterval(downloadTimer);
             $("#warningModal").modal("hide");
           } else {
-            $("#warningModalBody").html("Error - " + timeleft + " seconds remaining");
+            $("#warningModalBody").html(timeleft + " seconds remaining");
           }
           timeleft -= 1;
         }, 1000);
