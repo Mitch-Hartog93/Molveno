@@ -2,9 +2,11 @@
 
 body {
 	font-family: 'Montserrat', sans-serif;
+	/* 1.4.3 Contrast: Hieronder kan je de background-color veranderen*/
 	background-color: #c1e1f1;
     text-align: center;
     padding: 0;
+    /* 1.4.3 Contrast: Hieronder kan je de kleur van de tekst veranderen*/
     color: #4d96e4;
     max-width: 960pt;
     min-width: 960pt;
@@ -121,14 +123,6 @@ hr {
 
 /* MEDIA BREAKPOINTS */
 
-
-
-/* Changed width from 100% to 10% to make non-responsive */
-	.footer {
-    	width: 10%;
-    	padding: 1.5rem;
-    }
-
 	.footer ul {
     	margin-top: 1rem;
     }
@@ -153,5 +147,5 @@ hr {
     left:0;
     top:1em;
 }
-
+/* Here stop changes for 1.4.13 Content bij hover of focus*/
 }
