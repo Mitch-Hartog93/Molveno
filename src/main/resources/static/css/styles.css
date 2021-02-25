@@ -5,11 +5,23 @@ body {
 	/* 1.4.3 Contrast: Hieronder kan je de background-color veranderen*/
 	background-color: #c1e1f1;
     text-align: center;
+    /* 1.4.4 Herschalen van tekst: font-size: 2.2vh; verwijderen om WCAG-compliant te maken */
+    font-size: 2.2vh;
     padding: 0;
     /* 1.4.3 Contrast: Hieronder kan je de kleur van de tekst veranderen*/
     color: #4d96e4;
     max-width: 960pt;
     min-width: 960pt;
+}
+
+h4 {
+    /* 1.4.4 Herschalen van tekst: font-size: 2.2vh; verwijderen om WCAG-compliant te maken */
+    font-size: 3vh;
+}
+
+h5 {
+    /* 1.4.4 Herschalen van tekst: font-size: 2.2vh; verwijderen om WCAG-compliant te maken */
+    font-size: 3vh;
 }
 
 li {
