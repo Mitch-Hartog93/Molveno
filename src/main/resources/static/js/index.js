@@ -41,4 +41,3 @@ $('.play-pause').on('click', function() {
 //               document.getElementById('popup').style.display = 'none';
 //        });
 
-
